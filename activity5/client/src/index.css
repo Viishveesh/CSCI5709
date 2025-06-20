@@ -1,0 +1,38 @@
+.navbar-nav{
+    margin-right:90px;
+}
+.nav-link:hover{
+    cursor: pointer;
+}
+.active{
+    font-weight:600;
+}
+.navbar-brand{
+    margin-left:30px;
+}
+#banner{
+    background: #3D4EF9;
+    height:100vh;
+    width:100%;
+}
+.banner-h1{
+    color:white;
+    font-weight:600;
+}
+.banner-p{
+    color:white;   
+}
+.banner-cnt{
+    padding-top:5%;
+}
+.banner-left{
+    position: relative;
+    top:120px;
+}
+.card-title{
+    font-weight:600;
+}
+.contact-card{
+    text-align: center;
+    padding:10px 80px;
+}
