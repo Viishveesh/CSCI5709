@@ -22,7 +22,7 @@ const SignupPage = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/register", formData);
+      const response = await axios.post("https://activity6vishvesh.onrender.com/api/auth/register", formData);
       localStorage.setItem("token", response.data.token);
       setMessage("Signup successful! Token saved.");
       setTimeout(() => {

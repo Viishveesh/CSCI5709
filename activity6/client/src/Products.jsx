@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const URL = "http://localhost:5000/products-info";
+const URL = "https://activity6vishvesh.onrender.com/products-info";
 
 function Products() {
 
