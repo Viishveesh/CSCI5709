@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, Suspense } from 'react';
 import axios from "axios";
-import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer';
 import { Nav } from "react-bootstrap";
+
+const Navbar = React.lazy(() => import('../../components/Navbar'));
+const Footer = React.lazy(() => import('../../components/Footer'));
 
 function RequestLink() {
   const [formData, setFormData] = useState({ email: "" });
@@ -26,7 +27,7 @@ function RequestLink() {
   };
 
   return (
-    <>
+   <Suspense fallback={<div>Loading...</div>}>
         <Navbar />
    
     <div className="auth-container request-pwd">
@@ -72,7 +73,7 @@ function RequestLink() {
       </div>
     </div>
           <Footer />
-     </>
+     </Suspense>
   );
 }
 

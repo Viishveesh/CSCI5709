@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, Suspense } from 'react';
 import { useSearchParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer';
+
+// Lazy load Navbar and Footer
+const Navbar = React.lazy(() => import('../../components/Navbar'));
+const Footer = React.lazy(() => import('../../components/Footer'));
 
 function ResetPassword() {
   const [searchParams] = useSearchParams();
@@ -48,7 +50,7 @@ function ResetPassword() {
   };
 
   return (
-    <>
+   <Suspense fallback={<div>Loading...</div>}>
         <Navbar />
     
     <div className="auth-container request-pwd">
@@ -107,7 +109,7 @@ function ResetPassword() {
       </div>
     </div>
           <Footer />
-    </>
+  </Suspense>
   );
 }
 

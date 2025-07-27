@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer';
+
+// Lazy load Navbar and Footer
+const Navbar = React.lazy(() => import('../../components/Navbar'));
+const Footer = React.lazy(() => import('../../components/Footer'));
+
 const Signup = ({ toggleForm }) => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -59,7 +62,7 @@ const Signup = ({ toggleForm }) => {
 
 
   return (
-    <>
+   <Suspense fallback={<div>Loading...</div>}>
       <Navbar />
     
     <div className="auth-container">
@@ -76,7 +79,7 @@ const Signup = ({ toggleForm }) => {
         </div>
 
         <div className="auth-body">
-          {/* ✅ Success / Error message */}
+          {/* Success / Error message */}
           {message.text && (
             <div
               className={`alert ${message.type === 'error' ? 'alert-danger' : 'alert-success'}`}
@@ -144,7 +147,7 @@ const Signup = ({ toggleForm }) => {
       </div>
     </div>
           <Footer />
-    </>
+     </Suspense>
   );
 };
 

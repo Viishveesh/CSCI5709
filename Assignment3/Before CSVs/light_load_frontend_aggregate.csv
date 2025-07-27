@@ -1,0 +1,4 @@
+Label,# Samples,Average,Median,90% Line,95% Line,99% Line,Min,Max,Error %,Throughput,Received KB/sec,Sent KB/sec
+Index page,10,4,4,5,5,6,3,6,0.000%,.37027,0.75,0.04
+JS Bundle,10,13,13,16,16,17,10,17,0.000%,.37016,1102.46,0.05
+TOTAL,20,8,6,14,16,17,3,17,0.000%,.72659,1082.74,0.09
